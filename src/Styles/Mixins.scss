@@ -1,0 +1,72 @@
+
+@import "./Variables.scss";
+
+@mixin color-scheme($bg, $textcolor){
+    background-color: $bg;
+    color: $textcolor;
+}
+
+.dark-theme {
+    @include color-scheme($scheme-dark...);
+}
+
+.light-theme {
+    @include color-scheme($scheme-light...);
+}
+
+.btn-light-scheme {
+    @include color-scheme($scheme-light...);
+    border-radius: $radius-btn;
+    border-color: $light-bg;
+    padding: $padding-btn;
+    font-family: $family-btn;
+    width: $width-btn;
+    height: $height-btn;
+}
+
+.btn-dark-scheme {
+    @include color-scheme($scheme-dark...);
+    border-radius: $radius-btn;
+    border-color: $dark-bg;
+    padding: $padding-btn;
+    font-family: $family-btn;
+    width: $width-btn;
+    height: $height-btn;
+}
+
+.modal-dialog {
+    border-radius: $radius-btn;
+    padding: 15px;
+    max-width: 400px;
+    position: absolute !important;
+    top: 20%;
+    left: 40%;
+
+}
+
+.react-datepicker-wrapper {
+    border-radius: $radius-btn;
+}
+
+.MainApp {
+    width: 40%;
+}
+
+.formFields {
+    width: 70%;
+    margin-left: 15%;
+
+    label {
+        float: left;
+    }
+}
+
+.bar-dark-scheme {
+    @include color-scheme($scheme-dark...);
+    border-radius: $radius-btn;
+    border-color: $dark-bg;
+    padding: $padding-btn;
+    font-family: $family-btn;
+    width: inherit;
+    height: $height-btn;
+}
