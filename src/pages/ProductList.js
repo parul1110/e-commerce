@@ -1,21 +1,33 @@
+import { useSelector } from "react-redux";
 import LeftNav from "../components/LeftNav";
 import ProductCard from "../components/ProductCard"
-import {data} from "../store/products";
+import { useDispatch } from "react-redux";
+import { searchData } from "../store/appSlice";
+import SearchBar from "../components/SearchBar";
+
 export default function ProductList(){
-    let items = data;
-    let productList = items.map((i)=>{
+
+    const productData = useSelector((state)=>state.app.filterData);
+    const dispatch = useDispatch();
+    let productList = productData.map((i)=>{
         return <ProductCard key = {i.Description} data = {i} count={onCounter} />;
     });
 
     function onCounter(){
 
     }
+
+    function handleChange(e){
+        dispatch(searchData(e.target.value));
+    }
+
     return (<div className="App-Product dark-theme">
         <span className="pull-left left-nav">
         <LeftNav></LeftNav>
         </span>
         <span className="prod-list">
-        <h3 className ="">Product List</h3>
+        <SearchBar onChange = {handleChange} /> 
+        <img src = "../images/cart.png" />
         {productList}
         </span>
     </div>);

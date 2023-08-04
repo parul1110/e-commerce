@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Checkbox from "./Checkbox";
+import { useDispatch } from "react-redux";
+import { filterList } from "../store/appSlice";
 
 export default function LeftNav(){
     let list = [
@@ -9,14 +11,15 @@ export default function LeftNav(){
         {name: "grocery", value: "Grocery", check: true },
         {name: "paintings", value: "Paintings", check: true }
     ];
-
+    const dispatch = useDispatch();
     const [options, setOptions] = useState(list);
+
     let details = list.map((l)=>{
         return <Checkbox name = {l.name} value={l.value} key = {l.name} onClick={handleClick}/>;
     });
 
     function handleClick(e) {
-        let op = [...options];
+        let op = options;
         op = op.map((o)=>{
             if(o.name === e.target.name.toLowerCase()){
             o.check = e.target.checked;
@@ -24,6 +27,7 @@ export default function LeftNav(){
         return o;
     });
         setOptions(op);
+        dispatch(filterList(op));
     };
 
     return (

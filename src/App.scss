@@ -76,3 +76,22 @@
   @include color-scheme($scheme-dark...);
   overflow: scroll;
 }
+
+.searchbar {
+  display: inherit;
+
+  input, h3 {
+    margin: 10px;
+  }
+}
+
+.counter {
+  width: 80px;
+  color: #008080;
+  
+  button {
+    width: 30px;
+    border: white;
+    height: 10px;
+  }
+}
