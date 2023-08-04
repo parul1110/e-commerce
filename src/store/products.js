@@ -1,6 +1,6 @@
 export const data = [
     {name: "Aloo", Description:"Aloo", Price:"Rs 40", img: "../images/aloo.png", category: "Grocery", count: 0},
-    {name: "Sweatshirt", Description:"Blue Sweatshirt", Price:"Rs 240", img: "../images/blue-sweatshirt.png", category: "Clothes", count: 0},
+    {name: "Blue-Sweatshirt", Description:"Blue Sweatshirt", Price:"Rs 240", img: "../images/blue-sweatshirt.png", category: "Clothes", count: 0},
     {name: "Melon", Description:"Melon", Price:"Rs 60", img: "../images/melon.png", category: "Grocery", count: 0},
     {name: "Onion", Description:"Onion", Price:"Rs 40", img: "../images/onion.png", category: "Grocery", count: 0},
     {name: "Painting", Description:"Painting", Price:"Rs 940", img: "../images/painting.png", category: "Paintings", count: 0},

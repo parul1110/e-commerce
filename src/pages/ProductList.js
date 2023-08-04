@@ -10,12 +10,8 @@ export default function ProductList(){
     const productData = useSelector((state)=>state.app.filterData);
     const dispatch = useDispatch();
     let productList = productData.map((i)=>{
-        return <ProductCard key = {i.Description} data = {i} count={onCounter} />;
+        return <ProductCard key = {i.Description} data = {i} />;
     });
-
-    function onCounter(){
-
-    }
 
     function handleChange(e){
         dispatch(searchData(e.target.value));
@@ -27,7 +23,6 @@ export default function ProductList(){
         </span>
         <span className="prod-list">
         <SearchBar onChange = {handleChange} /> 
-        <img src = "../images/cart.png" />
         {productList}
         </span>
     </div>);

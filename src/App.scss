@@ -80,18 +80,31 @@
 .searchbar {
   display: inherit;
 
-  input, h3 {
+  input, h3, img {
     margin: 10px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    border: 2px white solid;
   }
 }
 
 .counter {
   width: 80px;
   color: #008080;
-  
+
   button {
     width: 30px;
     border: white;
     height: 10px;
   }
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
 }

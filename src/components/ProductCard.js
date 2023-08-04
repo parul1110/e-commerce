@@ -2,15 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Counter from "./Counter";
 import {increment, decrement} from "../store/appSlice";
 
-export default function ProductCard({data, count}){
+export default function ProductCard({data}){
     const images = require.context('../images', true); 
     const dispatch = useDispatch();
     const productData = useSelector((state=>state.app.productData));
-    let counterValue = productData.filter((p)=>{
-        if(p.name===data.name){
-            return p;
-        }
-    });
+    let counterValue = productData.filter((p)=>p.name===data.name);
     function onIncrement(){
         dispatch(increment(data));
     }
